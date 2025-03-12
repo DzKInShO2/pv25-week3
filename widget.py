@@ -18,8 +18,8 @@ class MovingLabel(QLabel):
         self.setMouseTracking(True)
 
     def mouseMoveEvent(self, e):
-        x = randint(0, self.screenWidth - 50)
-        y = randint(10, self.screenHeight - 10)
+        x = randint(0, self.screenWidth - self.width())
+        y = randint(0, self.screenHeight - self.height())
 
         self.move(x, y)
 
