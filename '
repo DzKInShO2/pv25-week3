@@ -1,0 +1,34 @@
+import sys
+
+from PyQt5.QtWidgets import (
+    QApplication,
+    QWidget,
+    QLabel
+)
+
+
+class MynWindow(QWidget):
+    def __init__(self):
+        super().__init__()
+
+        self.__init_ui()
+
+    def __init_ui(self):
+        self.setWindowTitle("Task Week 3 - (F1D02310110 - Dzakanov Inshoofi)")
+        self.setFixedSize(640, 640)
+
+        self.setMouseTracking(True)
+        self.label = QLabel(self)
+        self.label.setText("x: 0 y: 0")
+
+    def mouseMoveEvent(self, e):
+        self.label.setText(f"x: {e.x()} y: {e.y()}")
+
+
+if __name__ == "__main__":
+    app = QApplication([])
+
+    win = MynWindow()
+    win.show()
+
+    sys.exit(app.exec())
