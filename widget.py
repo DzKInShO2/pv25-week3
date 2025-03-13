@@ -10,11 +10,12 @@ from PyQt5.QtWidgets import (
 
 
 class MovingLabel(QLabel):
-    def __init__(self, parent):
-        super().__init__(parent)
+    def __init__(self, text, parent):
+        super().__init__(text, parent)
 
         self.screenWidth = 640
         self.screenHeight = 640
+        self.setMinimumWidth(72)
         self.setMouseTracking(True)
 
     def mouseMoveEvent(self, e):
@@ -36,9 +37,7 @@ class MynWindow(QWidget):
         # self.setGeometry(0, 0, 640, 640)
 
         self.setMouseTracking(True)
-        self.label = MovingLabel(self)
-        self.label.setText("x: 10 y: 10 Starting Point")
-        self.label.move(10, 10)
+        self.label = MovingLabel("x: 0 y: 0", self)
 
     def mouseMoveEvent(self, e):
         self.label.setText(f"x: {e.x()} y: {e.y()}")
