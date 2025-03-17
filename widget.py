@@ -33,8 +33,8 @@ class MynWindow(QWidget):
 
     def __init_ui(self):
         self.setWindowTitle("Task Week 3 - (F1D02310110 - Dzakanov Inshoofi)")
-        self.setFixedSize(640, 640)
-        # self.setGeometry(0, 0, 640, 640)
+        # self.setFixedSize(640, 640)
+        self.setGeometry(0, 0, 640, 640)
 
         self.setMouseTracking(True)
         self.label = MovingLabel("x: 0 y: 0", self)
